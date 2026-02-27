@@ -22,6 +22,7 @@ Search these subreddits for high-engagement posts (100+ upvotes preferred):
 | r/ChatGPT | OpenAI product discussion, real-world use cases |
 | r/ClaudeAI | Anthropic product discussion and community |
 | r/OpenAI | OpenAI news, research, and community |
+| r/MLOps | MLOps, model deployment, agent observability, production AI systems |
 
 **Search strategy**: Use `site:reddit.com` in WebSearch with keywords like `"agentic AI"`, `"LLM"`, `"Claude"`, `"GPT"`, `"agent"`, `"fine-tuning"` plus `after:YYYY-MM-DD`.
 
@@ -134,6 +135,15 @@ Essential for tracking agentic AI safety — these labs publish work that contex
 | Allen Institute for AI (AI2) | https://allenai.org/blog | Open research, NLP, reasoning |
 | EleutherAI | https://blog.eleuther.ai/ | Open-source models, interpretability, evals |
 
+### Alignment & Safety Forums
+
+Priority sources — major safety research often appears here before arXiv.
+
+- **Alignment Forum**: https://www.alignmentforum.org/ — Where ARC, Apollo, Anthropic, and independent alignment researchers publish work first. Sleeper Agents, Apollo's scheming evaluations, and Anthropic's interpretability work all appeared here before arXiv. Check weekly.
+- **LessWrong AI tag**: https://www.lesswrong.com/tag/ai — Community analysis and early framing of capability milestones. Lower signal-to-noise than the Alignment Forum but catches practitioner reasoning before papers form.
+
+**Search strategy**: `site:alignmentforum.org`, `site:lesswrong.com/tag/ai`, `"alignment forum" AI safety 2026`.
+
 ---
 
 ## 3. Technical Blogs & Engineering Posts
@@ -173,6 +183,8 @@ These companies often publish technical deep-dives before mainstream press picks
 | Databricks | https://www.databricks.com/blog | Enterprise LLM training and deployment |
 | Ollama | https://ollama.com/blog | Local model running and distribution |
 | CrewAI | https://www.crewai.com/blog | Multi-agent frameworks, role-based agents |
+| Modal | https://modal.com/blog | Serverless GPU inference; high-quality engineering posts on cold starts, GPU utilisation, and model deployment patterns |
+| Microsoft Semantic Kernel | https://devblogs.microsoft.com/semantic-kernel/ | AutoGen and Semantic Kernel releases; Microsoft's agentic AI frameworks widely deployed in enterprise |
 
 ### AI-only and technical media
 
@@ -345,6 +357,9 @@ Track government, legal, and compliance developments. **Always go to primary gov
 | Covington — Inside Privacy | https://www.insideprivacy.com | Data protection, AI Act, enforcement actions |
 | Covington — Inside Global Tech | https://www.insideglobaltech.com | Cross-border tech regulation, AI policy |
 | HSF Kramer — Behind the Prompt | search `"Behind the Prompt" HSF Kramer site:linkedin.com` | Monthly AI insights, enterprise governance |
+| Ada Lovelace Institute | https://www.adalovelaceinstitute.org | Independent UK think tank; rigorous research on AI governance, bias, and accountability — one of the most credible UK policy voices |
+| Center for Democracy & Technology | https://cdt.org/ai-policy/ | US civil liberties angle; covers FTC AI enforcement, workplace surveillance, and biometric AI regulation |
+| Electronic Frontier Foundation | https://www.eff.org/issues/ai | Civil liberties, IP, and surveillance dimensions of AI that legal commentary sources miss |
 
 ---
 
@@ -368,7 +383,15 @@ Practitioner-focused sources on building and operating agentic AI systems in pro
 - **URL**: https://blog.langchain.com
 - **Focus**: Agent framework patterns, LangGraph state machine releases, LangChain platform announcements, "State of Agent Engineering" reports
 
-**Search strategy**: `"agentic workflow" OR "LLM orchestration" site:vellum.ai OR site:blog.bytebytego.com`, `site:blog.langchain.com`, `site:ai.pydantic.dev`, `"agent architecture" production 2026`, `"MCP" OR "model context protocol" agent 2026`.
+### Composio
+- **URL**: https://blog.composio.io
+- **Focus**: Tool integration layer for MCP agents; active publisher on MCP security, connector ecosystem, and multi-agent tooling patterns
+
+### Hugging Face — Agents tag
+- **URL**: https://huggingface.co/blog/tag/agents
+- **Focus**: Agent framework announcements, smolagents releases, and community agent builds from the HF ecosystem (distinct from the main HF blog in open-source section)
+
+**Search strategy**: `"agentic workflow" OR "LLM orchestration" site:vellum.ai OR site:blog.bytebytego.com`, `site:blog.langchain.com`, `site:ai.pydantic.dev`, `site:blog.composio.io`, `"agent architecture" production 2026`, `"MCP" OR "model context protocol" agent 2026`.
 
 ---
 
@@ -409,8 +432,11 @@ The chip supply chain and data centre capacity constrain everything else in the 
 | Groq blog | https://groq.com/blog/ | LPU inference architecture |
 | The Information (AI hardware) | search `"AI chips" OR "GPU" site:theinformation.com` | Insider chip reporting |
 | Tom's Hardware AI | search `"AI" site:tomshardware.com` | GPU benchmarks, hardware releases |
+| AMD AI / ROCm blog | https://rocm.blogs.amd.com/ | MI300X/MI350 developments, ROCm ecosystem; AMD is now a genuine NVIDIA alternative for inference workloads |
+| Chips and Cheese | https://chipsandcheese.com | Deep architectural analysis of AMD, Intel, and NVIDIA silicon; complements SemiAnalysis on chip internals |
+| Fabricated Knowledge | https://www.fabricatedknowledge.com | Semiconductor supply chain; essential on TSMC capacity, CoWoS packaging, and HBM allocation that constrain AI infrastructure |
 
-**Search strategy**: `"Nvidia" OR "GPU cluster" OR "AI infrastructure" 2026`, `"data centre AI" site:computing.co.uk`, `site:nextplatform.com AI`, `site:datacenterdynamics.com`.
+**Search strategy**: `"Nvidia" OR "GPU cluster" OR "AI infrastructure" 2026`, `"data centre AI" site:computing.co.uk`, `site:nextplatform.com AI`, `site:datacenterdynamics.com`, `site:rocm.blogs.amd.com`, `site:chipsandcheese.com`, `site:fabricatedknowledge.com`.
 
 ---
 
@@ -452,3 +478,17 @@ Evaluation is now a discipline in its own right — distinct from research (§2)
 - **Focus**: Weekly digest of model ranking changes
 
 **Search strategy**: `site:lmsys.org/blog`, `site:artificialanalysis.ai`, `site:scale.com/leaderboard`, `"HELM benchmark" site:crfm.stanford.edu`, `site:livebench.ai`, `"eval" OR "benchmark" LLM 2026`.
+
+---
+
+## 12. Newsletters & Podcasts
+
+**Secondary sources only.** Use search snippets to identify stories, then find and link the primary source. Content discovered here goes into whichever existing section fits — Research, Engineering, Industry, etc. Do not cite a podcast or newsletter when you can cite the original paper or post.
+
+| Source | URL | Focus |
+|---|---|---|
+| The Batch (deeplearning.ai) | https://www.deeplearning.ai/the-batch/ | Andrew Ng's weekly digest; surfaces enterprise adoption signals and research framing before mainstream press |
+| Latent Space | https://www.latent.space/podcast | Developer-focused interviews with AI researchers and builders; often first to surface new research directions weeks before papers publish |
+| TWIML AI Podcast | https://twimlai.com/podcast | Technical ML and AI interviews; strong on production ML, research, and hardware topics |
+
+**Search strategy**: `site:deeplearning.ai/the-batch`, `site:latent.space`, `site:twimlai.com`. Use as gap-fillers — if a story appears here and not in primary sources, find and link the primary source rather than citing the newsletter/podcast.
