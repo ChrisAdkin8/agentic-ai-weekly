@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://chrisadkin8.github.io/agentic-ai-weekly/",
+  website: "https://agenticaiweekly.org/",
   author: "Chris Adkin",
   profile: "https://github.com/ChrisAdkin8",
   desc: "Weekly digest of agentic AI and LLM developments — curated by the newsletter-ai Claude Code skill.",
