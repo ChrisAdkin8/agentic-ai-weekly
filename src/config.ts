@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/ChrisAdkin8",
   desc: "Weekly digest of agentic AI and LLM developments — curated by the newsletter-ai Claude Code skill.",
   title: "Agentic AI & LLM Weekly",
-  ogImage: "astropaper-og.jpg",
+  ogImage: undefined,
   lightAndDarkMode: true,
   postPerIndex: 5,
   postPerPage: 10,
