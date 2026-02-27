@@ -1,0 +1,49 @@
+name: Generate Weekly Newsletter
+
+on:
+  schedule:
+    - cron: '0 9 * * 5'  # Every Friday at 09:00 UTC
+  workflow_dispatch:       # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Install newsletter skill
+        run: |
+          mkdir -p ~/.claude/skills
+          cp -r .claude/skills/newsletter-ai ~/.claude/skills/
+
+      - name: Configure git
+        run: |
+          git config user.name "Newsletter Bot"
+          git config user.email "bot@agenticaiweekly.org"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Generate and publish newsletter
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          claude --dangerously-skip-permissions -p "/newsletter-ai web:$(pwd)"
+
+      - name: Push any unpushed changes
+        run: |
+          git add src/data/blog/ || true
+          git diff --staged --quiet || git commit -m "Newsletter $(date -u +%Y-%m-%d)"
+          git push || true
